@@ -21,39 +21,62 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.main-title {
+  font-size: 2.5rem;
+  letter-spacing: .4rem;
+  text-transform: uppercase;
+}
+
 .music-container {
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 20px 20px 0 rgba(252, 169, 169, 0.6);
   display: flex;
-  padding: 20px 30px;
+  padding: 20px 30px 20px 150px;
   position: relative;
   margin: 100px 0;
   z-index: 10;
 }
 
 .img-container {
+  height: 110px;
   width: 110px;
-  position: relative;
+  position: absolute;
+  left: 20px;
+  top: -30px;
 }
 
-.img-container::after {
-  content: "";
+.img-container .img-circle {
   position: absolute;
-  bottom: 100%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 50%);
   width: 8px;
   height: 8px;
-  background-color: #fff;
+  transform: translate(-50%, -50%);
   border-radius: 50%;
+  background-color: #fff;
+  z-index: 10;
 }
+
+.img-container .img-stick {
+  position: absolute;
+  top: 7%;
+  left: 31.5%;
+  width: 5px;
+  height: 53%;
+  transform: rotate(-45deg);
+  background-color: #000;
+  border-radius: 8px;
+  z-index: 10;
+}
+
 
 .img-container img {
   width: inherit;
   height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: top;
   position: absolute;
   bottom: 0;
   left: 0;
