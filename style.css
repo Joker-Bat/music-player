@@ -23,7 +23,7 @@ body {
 
 .main-title {
   font-size: 2.5rem;
-  letter-spacing: .4rem;
+  letter-spacing: 0.4rem;
   text-transform: uppercase;
 }
 
@@ -70,7 +70,6 @@ body {
   z-index: 10;
 }
 
-
 .img-container img {
   width: inherit;
   height: 110px;
@@ -81,7 +80,7 @@ body {
   bottom: 0;
   left: 0;
 
-  animation: rotate 3s linear infinite;
+  animation: rotate 5s linear infinite;
   animation-play-state: paused;
 }
 
@@ -164,4 +163,8 @@ body {
   border-radius: 5px;
   width: 0%;
   transition: width 0.1s linear;
+}
+
+.duration {
+  text-align: right;
 }

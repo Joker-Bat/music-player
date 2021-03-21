@@ -10,7 +10,8 @@ const musicContainer = get("musicContainer"),
   cover = get("cover"),
   prev = get("prev"),
   next = get("next"),
-  play = get("play");
+  play = get("play"),
+  durationTime = get("duration");
 
 // Sing Titles
 const songs = ["EnIniyaThanimaye", "EnjoyEnjaami", "ThattaanThattaan"];
@@ -67,6 +68,22 @@ function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
+  const totalDuration = getTime(duration);
+  const currentDuration = getTime(currentTime);
+
+  durationTime.innerHTML = `<p>${currentDuration} / ${totalDuration}</p>`;
+}
+
+function getTime(time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = Math.floor(time % 60);
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return `${minutes}:${seconds}`;
 }
 
 function setProgress(e) {
